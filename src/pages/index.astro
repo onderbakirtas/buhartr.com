@@ -1,0 +1,80 @@
+---
+import Analytics from "../components/Analytics.astro";
+import Fonts from "../components/Fonts.astro";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>BuharTR - Steam'in Türkçesi</title>
+    <Analytics />
+    <Fonts />
+    <style>
+      body {
+        background-color: black;
+        display: flex;
+        height: 100vh;
+        width: 100vw;
+        margin: 0;
+        position: relative;
+        user-select: none;
+      }
+
+      .logo {
+        width: 400px;
+        max-width: 60%;
+        box-sizing: border-box;
+        margin: auto;
+      }
+
+      #sixteen {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: min(6vw, 2rem);
+        font-family: "Courier New", Courier, monospace;
+        line-height: 1;
+      }
+    </style>
+    <script>
+      const sixteen = document.getElementById("sixteen");
+
+      const countDownDate = new Date("Jan 1, 2025 00:00:00").getTime();
+
+      const updateCountdown = () => {
+        const now = new Date().getTime();
+        const distance = countDownDate - now;
+        const totalSeconds = Math.max(0, Math.floor(distance / 1000));
+
+        if (sixteen) {
+          sixteen.textContent =
+            distance < 0 ? "0000000" : totalSeconds.toString().padStart(7, "0");
+
+          sixteen.style.opacity = Math.min(
+            totalSeconds / (60 * 60 * 24 * 365 * 4),
+          ).toString();
+        }
+
+        if (distance < 0) {
+          clearInterval(intervalId);
+        }
+      };
+
+      const intervalId = setInterval(updateCountdown, 1000);
+
+      updateCountdown();
+    </script>
+  </head>
+  <body>
+    <img class="logo" src={"/buhartr.png"} alt="BuharTR Logo" />
+    <span id="sixteen"></span>
+  </body>
+</html>
