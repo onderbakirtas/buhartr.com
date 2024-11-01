@@ -12,7 +12,6 @@ import Fonts from "../components/Fonts.astro";
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
     />
     <title>BuharTR - Steam'in Türkçesi</title>
-    <Analytics />
     <Fonts />
     <style>
       body {
@@ -59,7 +58,7 @@ import Fonts from "../components/Fonts.astro";
             distance < 0 ? "0000000" : totalSeconds.toString().padStart(7, "0");
 
           sixteen.style.opacity = Math.min(
-            totalSeconds / (60 * 60 * 24 * 365 * 4),
+            totalSeconds / (60 * 60 * 24 * 365 * 4)
           ).toString();
         }
 
@@ -72,6 +71,7 @@ import Fonts from "../components/Fonts.astro";
 
       updateCountdown();
     </script>
+    <Analytics />
   </head>
   <body>
     <img class="logo" src={"/buhartr.png"} alt="BuharTR Logo" />
