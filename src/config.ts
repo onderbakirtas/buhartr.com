@@ -13,14 +13,14 @@ export const CONFIG: Config = {
     canonical: "https://buhartr.com",
     title: "BuharTR, Steam'in Türkçesi",
     description:
-      "Oyun dünyasına gönül vermiş bir grup gencin kurduğu BuharTR sayesinde, 15 yıldır Steam platformu Türkçe olarak hizmet veriyor. BuharTR, Steam'in Türkçesi.",
+      "Oyun dünyasına gönül vermiş bir grup gencin kurduğu BuharTR sayesinde, 14 yıldır Steam platformu Türkçe olarak hizmet veriyor. BuharTR, Steam'in Türkçesi.",
     openGraph: {
       type: "website",
       url: "https://buhartr.com",
       site_name: "BuharTR",
       title: "BuharTR, Steam'in Türkçesi",
       description:
-        "Oyun dünyasına gönül vermiş bir grup gencin kurduğu BuharTR sayesinde, 15 yıldır Steam platformu Türkçe olarak hizmet veriyor. BuharTR, Steam'in Türkçesi.",
+        "Oyun dünyasına gönül vermiş bir grup gencin kurduğu BuharTR sayesinde, 14 yıldır Steam platformu Türkçe olarak hizmet veriyor. BuharTR, Steam'in Türkçesi.",
       images: [
         {
           url: "https://buhartr.com/buhartr-card.webp",
