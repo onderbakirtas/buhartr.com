@@ -60,8 +60,7 @@ import Analytics from "../components/Analytics.astro";
       const countDownDate = new Date("Jan 1, 2025 00:00:00").getTime();
 
       const updateCountdown = () => {
-        const now = new Date().getTime();
-        const distance = countDownDate - now;
+        const distance = countDownDate - new Date().getTime();
         const totalSeconds = Math.max(0, Math.floor(distance / 1000));
 
         if (sixteen) {
