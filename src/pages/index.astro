@@ -2,7 +2,7 @@
 import Analytics from "../components/Analytics.astro";
 ---
 
-<html lang="en">
+<html lang="tr">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
@@ -14,27 +14,27 @@ import Analytics from "../components/Analytics.astro";
     <style>
       body {
         background-color: black;
-        display: flex;
         height: 100vh;
-        width: 100vw;
         margin: 0;
         position: relative;
         user-select: none;
         pointer-events: none;
       }
 
-      .logo {
-        width: 400px;
-        max-width: 65vw;
-        box-sizing: border-box;
-        margin: auto;
-      }
-
-      #sixteen {
+      #logo, #sixteen {
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+      }
+
+      #logo {
+        width: 400px;
+        max-width: 65vw;
+        height: auto;
+      }
+
+      #sixteen {
         color: white;
         font-size: min(5vw, 2rem);
         font-family: "Courier New", Courier, monospace;
@@ -80,7 +80,7 @@ import Analytics from "../components/Analytics.astro";
     <Analytics />
   </head>
   <body>
-    <img class="logo" src={"/buhartr.png"} alt="BuharTR Logo" />
-    <span id="sixteen"></span>
+    <img id="logo" src="/buhartr.png" alt="BuharTR Logosu" />
+    <span id="sixteen" />
   </body>
 </html>
