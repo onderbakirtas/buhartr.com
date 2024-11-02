@@ -1,9 +1,18 @@
-<script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-ETLKRG7TBX"></script>
-<script>
-  // @ts-nocheck
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+---
+import { CONFIG } from "@/config";
+---
 
-  gtag('config', 'G-ETLKRG7TBX');
+<script
+  is:inline
+  type="text/partytown"
+  src={`https://www.googletagmanager.com/gtag/js?id=${CONFIG.analyticsId}`}
+></script>
+<script is:inline define:vars={{ id: CONFIG.analyticsId }}>
+  // eslint-disable-next-line
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+  gtag("config", id);
 </script>
