@@ -1,6 +1,7 @@
 ---
 import Analytics from "../components/Analytics.astro";
 import { AstroSeo } from "@astrolib/seo";
+import { CONFIG } from "@/config";
 ---
 
 <html lang="tr">
@@ -10,39 +11,13 @@ import { AstroSeo } from "@astrolib/seo";
       name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=5.0"
     />
-    <AstroSeo 
-      title="BuharTR - Steam'in Türkçesi"
-      description="Steam platformunu ve 10'dan fazla oyunu resmi olarak Türkçe'ye çeviren gönüllü topluluk."
-      canonical="https://buhartr.com"
-      openGraph={
-        {
-          url: "https://buhartr.com",
-          title: "BuharTR - Steam'in Türkçesi",
-          description: "Steam platformunu ve 10'dan fazla oyunu resmi olarak Türkçe'ye çeviren gönüllü topluluk.",
-          images: [
-            {
-              url: "https://buhartr.com/buhartr-card.webp",
-              width: 1200,
-              height: 675,
-              alt: "BuharTR - Steam'in Türkçesi",
-            },
-          ],
-        }
-      }
-      twitter={
-        {
-          handle: "@buhartr",
-          site: "@site",
-          cardType: "summary_large_image",
-        }
-      }
-    />
+    <AstroSeo {...CONFIG.seo} />
     <meta name="theme-color" content="#000000" />
     <meta name="author" content="BuharTR" />
     <meta name="robots" content="all" />
     <link rel="sitemap" href="/sitemap.xml" />
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-    <title>BuharTR - Steam'in Türkçesi</title>
+    <title>{CONFIG.seo.title}</title>
     <style>
       body {
         background-color: black;
@@ -54,7 +29,7 @@ import { AstroSeo } from "@astrolib/seo";
       }
 
       #logo,
-      #sixteen {
+      #fifteen {
         position: absolute;
         top: 50%;
         left: 50%;
@@ -88,16 +63,16 @@ import { AstroSeo } from "@astrolib/seo";
       }
     </style>
     <script>
-      const sixteen = document.getElementById("sixteen");
+      const fifteen = document.getElementById("fifteen");
 
-      const countDownDate = new Date("Jan 1, 2025 00:00:00").getTime();
+      const countDownDate = new Date("Jan 11, 2025 00:00:00").getTime();
 
       const updateCountdown = () => {
         const distance = countDownDate - new Date().getTime();
         const totalSeconds = Math.max(0, Math.floor(distance / 1000));
 
-        if (sixteen) {
-          sixteen.textContent = totalSeconds.toString().padStart(7, "0");
+        if (fifteen) {
+          fifteen.textContent = totalSeconds.toString().padStart(7, "0");
         }
 
         if (distance < 0) {
@@ -113,6 +88,6 @@ import { AstroSeo } from "@astrolib/seo";
   </head>
   <body>
     <img id="logo" src="/buhartr.webp" alt="BuharTR Logosu" />
-    <span id="sixteen"></span>
+    <span id="fifteen"></span>
   </body>
 </html>
