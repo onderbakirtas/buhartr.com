@@ -1,23 +1,14 @@
 ---
-import Analytics from "../components/Analytics.astro";
-import { AstroSeo } from "@astrolib/seo";
 import { CONFIG } from "@/config";
 ---
 
 <html lang="tr">
   <head>
     <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=5.0"
-    />
-    <AstroSeo {...CONFIG.seo} />
-    <meta name="theme-color" content="#000000" />
-    <meta name="author" content="BuharTR" />
-    <meta name="robots" content="all" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{CONFIG.seo.title}</title>
     <link rel="sitemap" href="/sitemap.xml" />
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-    <title>{CONFIG.seo.title}</title>
     <style>
       body {
         background-color: black;
@@ -62,6 +53,10 @@ import { CONFIG } from "@/config";
         }
       }
     </style>
+  </head>
+  <body>
+    <img id="logo" src="/buhartr.webp" alt="BuharTR Logosu" />
+    <span id="countdown"></span>
     <script>
       const countdown = document.getElementById("countdown");
 
@@ -84,10 +79,5 @@ import { CONFIG } from "@/config";
 
       updateCountdown();
     </script>
-    <Analytics />
-  </head>
-  <body>
-    <img id="logo" src="/buhartr.webp" alt="BuharTR Logosu" />
-    <span id="countdown"></span>
   </body>
 </html>
