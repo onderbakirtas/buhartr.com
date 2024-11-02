@@ -1,17 +1,43 @@
 ---
 import Analytics from "../components/Analytics.astro";
+import { AstroSeo } from "@astrolib/seo";
 ---
 
 <html lang="tr">
   <head>
     <meta charset="utf-8" />
     <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <AstroSeo 
+      title="BuharTR - Steam'in Türkçesi"
+      description="SSteam platformunu ve 10'dan fazla oyunu resmi olarak Türkçe'ye çeviren gönüllü topluluk."
+      canonical="https://buhartr.com"
+      openGraph={
+        {
+          url: "https://buhartr.com",
+          title: "BuharTR - Steam'in Türkçesi",
+          description: "Steam platformunu ve 10'dan fazla oyunu resmi olarak Türkçe'ye çeviren gönüllü topluluk.",
+          images: [
+            {
+              url: "https://buhartr.com/buhartr-card.png",
+              width: 1200,
+              height: 675,
+              alt: "BuharTR - Steam'in Türkçesi",
+            },
+          ],
+        }
+      }
+      twitter={
+        {
+          handle: "@buhartr",
+          site: "@site",
+          cardType: "summary_large_image",
+        }
+      }
     />
     <meta name="theme-color" content="#000000" />
-    <meta name="description" content="Steam'in Türkçesi" />
-    <meta name="keywords" content="steam, türkçe, oyun, video oyun, oyun platformu" />
     <meta name="author" content="BuharTR" />
     <meta name="robots" content="all" />
     <link rel="sitemap" href="/sitemap.xml" />
@@ -27,7 +53,8 @@ import Analytics from "../components/Analytics.astro";
         pointer-events: none;
       }
 
-      #logo, #sixteen {
+      #logo,
+      #sixteen {
         position: absolute;
         top: 50%;
         left: 50%;
@@ -86,6 +113,6 @@ import Analytics from "../components/Analytics.astro";
   </head>
   <body>
     <img id="logo" src="/buhartr.png" alt="BuharTR Logosu" />
-    <span id="sixteen" />
+    <span id="sixteen"></span>
   </body>
 </html>
