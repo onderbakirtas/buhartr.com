@@ -29,7 +29,7 @@ import { CONFIG } from "@/config";
       }
 
       #logo,
-      #fourteen {
+      #countdown {
         position: absolute;
         top: 50%;
         left: 50%;
@@ -42,7 +42,7 @@ import { CONFIG } from "@/config";
         height: auto;
       }
 
-      #sixteen {
+      #countdown {
         color: white;
         font-size: min(5vw, 2rem);
         font-family: "Courier New", Courier, monospace;
@@ -63,7 +63,7 @@ import { CONFIG } from "@/config";
       }
     </style>
     <script>
-      const fourteen = document.getElementById("fourteen");
+      const countdown = document.getElementById("countdown");
 
       const countDownDate = new Date("Jan 11, 2025 00:00:00").getTime();
 
@@ -71,8 +71,8 @@ import { CONFIG } from "@/config";
         const distance = countDownDate - new Date().getTime();
         const totalSeconds = Math.max(0, Math.floor(distance / 1000));
 
-        if (fourteen) {
-          fourteen.textContent = totalSeconds.toString().padStart(7, "0");
+        if (countdown) {
+          countdown.textContent = totalSeconds.toString().padStart(7, "0");
         }
 
         if (distance < 0) {
@@ -88,6 +88,6 @@ import { CONFIG } from "@/config";
   </head>
   <body>
     <img id="logo" src="/buhartr.webp" alt="BuharTR Logosu" />
-    <span id="fourteen"></span>
+    <span id="countdown"></span>
   </body>
 </html>
